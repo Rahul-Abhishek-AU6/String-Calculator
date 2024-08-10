@@ -49,10 +49,10 @@ To run the application locally, you can clone the repository using the following
 1. Open your terminal or command prompt.
 2. Run the following command to clone the repository:
    ```bash
-   `git clone https://github.com/Rahul-Abhishek-AU6/String-Calculator.git`
+   git clone https://github.com/Rahul-Abhishek-AU6/String-Calculator.git
 3. Navigate to the cloned directory:
    ```bash
-   `cd String-Calculator`
+   cd String-Calculator
 4. Open the index.html file in your browser to use the application.
 
 ## GitHub Repository
