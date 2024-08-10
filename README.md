@@ -33,12 +33,31 @@ This is a simple web application that implements a String Calculator, based on a
 ## File Structure
 
 - `index.html`: The main HTML file that includes the structure of the application.
-- `styles.css`: Contains all the CSS styling for the application.
-- `script.js`: Contains the JavaScript logic for the String Calculator.
-  
+- `assets/styles.css`: Contains all the CSS styling for the application.
+- `assets/script.js`: Contains the JavaScript logic for the String Calculator.
+
 ## Setup and Running
 
-No special setup is required. Simply open the `index.html` file in your browser to use the application.
+### Hosting
+
+The application is hosted at [https://string-calculator.static.domains/](https://string-calculator.static.domains/). You can access and use the app directly from your browser.
+
+### Cloning the Repository
+
+To run the application locally, you can clone the repository using the following steps:
+
+1. Open your terminal or command prompt.
+2. Run the following command to clone the repository:
+   ```bash
+   `git clone https://github.com/Rahul-Abhishek-AU6/String-Calculator.git`
+3. Navigate to the cloned directory:
+   ```bash
+   `cd String-Calculator`
+4. Open the index.html file in your browser to use the application.
+
+## GitHub Repository
+The source code for this application is available on GitHub: https://github.com/Rahul-Abhishek-AU6/String-Calculator
+
 
 ## Example Input/Output
 
