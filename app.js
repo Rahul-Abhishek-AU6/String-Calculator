@@ -3,11 +3,10 @@ function add(numbers) {
         return 0;
     }
 
-    const nums = numbers.split(',').map(Number);
+    // Replace new lines with commas
+    const nums = numbers.replace(/\n/g, ',').split(',').map(Number);
     return nums.reduce((sum, num) => sum + num, 0);
 }
 
 // Test cases
-console.log(add(""));         // Output: 0
-console.log(add("1"));        // Output: 1
-console.log(add("1,5"));      // Output: 6
+console.log(add("1\n2,3"));    // Output: 6
