@@ -43,12 +43,11 @@ This is a simple web application that implements a String Calculator, based on a
   - index.js: Entry point for the React application.
 - README.md: This file.
 
-## Setup and Running
-
 ## Live Demo
 
 You can try out the live application here: [String Calculator](https://main--string-calculator.netlify.app/)
 
+## Setup and Running
 
 ### Cloning the Repository
 
@@ -67,12 +66,12 @@ To run the application locally, you can clone the repository using the following
 5. Start the Development Server
    ```bash
    npm start
-   // The application will be available at http://localhost:3000.
+
+The application will be available at http://localhost:3000.
 
 
 ## GitHub Repository
 The source code for this application is available on GitHub: https://github.com/Rahul-Abhishek-AU6/String-Calculator
-
 
 ## Example Input/Output
 
