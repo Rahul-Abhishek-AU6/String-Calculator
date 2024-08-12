@@ -30,11 +30,18 @@ This is a simple web application that implements a String Calculator, based on a
    - The result of the calculation will be displayed below the button.
    - If there are any errors (e.g., negative numbers), an error message will be displayed.
 
-## File Structure
+## Folder Structure
 
-- `index.html`: The main HTML file that includes the structure of the application.
-- `assets/styles.css`: Contains all the CSS styling for the application.
-- `assets/script.js`: Contains the JavaScript logic for the String Calculator.
+- public/: Contains static files like index.html.
+- assets/: Contains CSS and JS files.
+  - styles.css: Contains all the CSS styling for the application
+- src/: Contains the source code for the application.
+  - components/: React components for the application.
+    - calculator.js: Contains the JavaScript logic for the String Calculator.
+    - calculator.test.js: Contains test cases.
+  - App.js: Main application component.
+  - index.js: Entry point for the React application.
+- README.md: This file.
 
 ## Setup and Running
 
@@ -60,7 +67,7 @@ To run the application locally, you can clone the repository using the following
 5. Start the Development Server
    ```bash
    npm start
-   The application will be available at http://localhost:3000.
+   // The application will be available at http://localhost:3000.
 
 
 ## GitHub Repository
