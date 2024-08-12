@@ -62,9 +62,3 @@ Desktop.ini
 *.swp
 *.bak
 *.tmp
-
-# Eject script generated files
-/public/static/
-public/favicon.ico
-public/index.html
-public/manifest.json
