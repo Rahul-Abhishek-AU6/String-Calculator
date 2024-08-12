@@ -1,81 +1,69 @@
-import React, { useState } from 'react';
-import '../assets/styles.css';
+import React, { useState } from "react";
 
 const Calculator = () => {
-    const [inputType, setInputType] = useState('text');
-    const [inputValue, setInputValue] = useState('');
-    const [result, setResult] = useState('');
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState("");
+  const [isTextarea, setIsTextarea] = useState(true);
 
-    const add = (numbers) => {
-        if (!numbers) {
-            return 0;
-        }
+  const add = (numbers) => {
+    if (numbers.trim() === "") return 0;
 
-        let delimiter = ',';
-        let numberString = numbers;
+    let delimiter = ",";
+    let numbersWithoutDelimiter = numbers;
 
-        // Replace '\n' with an actual newline character
-        numberString = numberString.replace(/\\n/g, '\n');
-
-        // Check for custom delimiter
-        if (numberString.startsWith('//')) {
-            const delimiterEndIndex = numberString.indexOf('\n');
-            delimiter = numberString.substring(2, delimiterEndIndex);
-            numberString = numberString.substring(delimiterEndIndex + 1);
-        }
-
-        // Split numbers by the delimiter and actual newline
-        const nums = numberString.split(new RegExp(`[${delimiter}\n]`)).map(Number);
-
-        // Check for negative numbers
-        const negatives = nums.filter(num => num < 0);
-        if (negatives.length > 0) {
-            throw new Error(`Negative numbers not allowed: ${negatives.join(', ')}`);
-        }
-
-        return nums.reduce((sum, num) => sum + num, 0);
+    if (numbers.startsWith("//")) {
+      const parts = numbers.split("\n");
+      if (parts.length < 2) {
+        throw new Error("Invalid delimiter format");
+      }
+      delimiter = parts[0].substring(2);
+      numbersWithoutDelimiter = parts[1];
     }
 
-    const calculate = () => {
-        try {
-            const result = add(inputValue);
-            setResult(`Result: ${result}`);
-        } catch (error) {
-            setResult(error.message);
-        }
-    }
-
-    const toggleInput = () => {
-        setInputType(inputType === 'text' ? 'textarea' : 'text');
-    }
-
-    return (
-        <div className="calculator-container">
-            <h1>String Calculator</h1>
-            <button className="toggle-button" onClick={toggleInput}>
-                Switch to {inputType === 'text' ? 'Textarea' : 'Text Field'}
-            </button>
-            {inputType === 'text' ? (
-                <input
-                    type="text"
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    className="input-field"
-                    placeholder="Enter numbers"
-                />
-            ) : (
-                <textarea
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    className="input-field"
-                    placeholder="Enter numbers with optional delimiters"
-                    style={{ height: '100px' }}
-                />
-            )}
-            <button onClick={calculate}>Calculate</button>
-            <div className="result">{result}</div>
-        </div>
+    const numArray = numbersWithoutDelimiter.split(
+      new RegExp(`[${delimiter}\n]`)
     );
+    const negatives = numArray.filter((num) => parseInt(num, 10) < 0);
+
+    if (negatives.length > 0) {
+      throw new Error(`Negative numbers not allowed: ${negatives.join(", ")}`);
+    }
+
+    return numArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
+  };
+
+  const calculate = () => {
+    try {
+      const result = add(input);
+      setResult(`Result: ${result}`);
+    } catch (error) {
+      setResult(error.message);
+    }
+  };
+
+  return (
+    <div className="container">
+      <h1>String Calculator</h1>
+      <button onClick={() => setIsTextarea(true)}>Switch to Textarea</button>
+      <button onClick={() => setIsTextarea(false)}>Switch to Text Field</button>
+      {isTextarea ? (
+        <textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Enter numbers"
+        />
+      ) : (
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Enter numbers"
+        />
+      )}
+      <button onClick={calculate}>Calculate</button>
+      <div>{result}</div>
+    </div>
+  );
 };
 
 export default Calculator;
