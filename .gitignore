@@ -1,0 +1,70 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Build directories
+build/
+dist/
+
+# Dependency directories
+node_modules/
+
+# Generated files
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# React Native
+.expo/
+.expo-shared/
+
+# Coverage directory used by testing frameworks
+coverage/
+
+# Ignore specific files
+!.gitignore
+
+# Miscellaneous
+*.lock
+*.cache
+*.pnp.*
+.pnp.js
+
+# MacOS files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Linux system files
+*.pid
+
+# Temp files
+*.swp
+*.bak
+*.tmp
+
+# Eject script generated files
+/public/static/
+public/favicon.ico
+public/index.html
+public/manifest.json
