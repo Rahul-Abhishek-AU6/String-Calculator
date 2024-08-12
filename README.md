@@ -38,9 +38,10 @@ This is a simple web application that implements a String Calculator, based on a
 
 ## Setup and Running
 
-### Hosting
+## Live Demo
 
-The application is hosted at [https://string-calculator.static.domains/](https://string-calculator.static.domains/). You can access and use the app directly from your browser.
+You can try out the live application here: [String Calculator](https://main--string-calculator.netlify.app/)
+
 
 ### Cloning the Repository
 
@@ -53,7 +54,14 @@ To run the application locally, you can clone the repository using the following
 3. Navigate to the cloned directory:
    ```bash
    cd String-Calculator
-4. Open the index.html file in your browser to use the application.
+4. Install Dependencies
+   ```bash
+   npm install
+5. Start the Development Server
+   ```bash
+   npm start
+   The application will be available at http://localhost:3000.
+
 
 ## GitHub Repository
 The source code for this application is available on GitHub: https://github.com/Rahul-Abhishek-AU6/String-Calculator
@@ -75,6 +83,16 @@ The source code for this application is available on GitHub: https://github.com/
 
 - **Input**: `"//;\n1;-2;3"`
   - **Output**: `Error: Negative numbers not allowed: -2`
+
+## Testing
+To run the tests, use the following command:
+
+```bash
+   npm test
+   ```
+
+## Contributing
+If you would like to contribute to this project, please fork the repository and submit a pull request with your changes. Make sure to include appropriate tests and documentation.
 
 ## License
 
